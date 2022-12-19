@@ -1,0 +1,19 @@
+{
+  "name": "course-work-oop",
+  "version": "1.0.0",
+  "description": "Snake game in oop style",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirvikulin/Course-Work-OOP.git"
+  },
+  "author": "Volodymyr Vikulin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladimirvikulin/Course-Work-OOP/issues"
+  },
+  "homepage": "https://github.com/vladimirvikulin/Course-Work-OOP#readme"
+}
