@@ -1,0 +1,38 @@
+body {
+	margin: 0px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+#game {
+	background: #176f83;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.scoreBlock {
+	margin-right: 20vw;
+	margin-bottom: 3vh;
+}
+
+.scoreCount{
+	font-size: 1.7em;
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.scoreName{
+	font-size: 1.5em;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.canvas {
+	background-color: #ffffff;
+	border-radius: 5px;
+	border: 12px solid #000000;
+	box-shadow: 0px 0px 50px 5px #000000;
+}
