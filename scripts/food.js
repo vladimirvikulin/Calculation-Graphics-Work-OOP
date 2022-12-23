@@ -18,6 +18,13 @@ export default class Food {
     this.foodImg4 = new Image('img/strawberry.png');
     this.foodImg5 = new Image('img/watermelon.png');
     this.superFoodImg = new Image('img/goldenApple.png');
+    this.randomCoords();
+  }
+
+  randomCoords() {
+    this.food = Food.getRandomFood(1, 5);
+    this.x = Food.getRandomFood(0, this.config.cols - 1) * this.config.blockSize;
+    this.y = Food.getRandomFood(0, this.config.rows - 1) * this.config.blockSize;
   }
 
   static getRandomFood(min, max) {
