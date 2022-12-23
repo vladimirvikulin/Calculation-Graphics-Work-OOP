@@ -19,4 +19,8 @@ export default class Food {
     this.foodImg5 = new Image('img/watermelon.png');
     this.superFoodImg = new Image('img/goldenApple.png');
   }
+
+  static getRandomFood(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 }
