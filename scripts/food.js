@@ -19,6 +19,7 @@ export default class Food {
     this.foodImg5 = new Image('img/watermelon.png');
     this.superFoodImg = new Image('img/goldenApple.png');
     this.randomCoords();
+    this.spawnSuper();
   }
 
   randomCoords() {
@@ -30,6 +31,13 @@ export default class Food {
   randomSuperCoords() {
     this.superX = Food.getRandomFood(0, this.config.cols - 1) * this.config.blockSize;
     this.superY = Food.getRandomFood(0, this.config.rows - 1) * this.config.blockSize;
+  }
+
+  spawnSuper() {
+    setInterval(() => {
+      this.isSuper = true;
+      this.randomSuperCoords();
+    }, 20000);
   }
 
   static getRandomFood(min, max) {
