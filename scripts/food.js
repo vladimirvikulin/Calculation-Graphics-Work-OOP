@@ -22,6 +22,15 @@ export default class Food {
     this.spawnSuper();
   }
 
+  draw(context) {
+    if (this.food === 1) context.drawImage(this.foodImg1.image, this.x, this.y);
+    else if (this.food === 2) context.drawImage(this.foodImg2.image, this.x, this.y);
+    else if (this.food === 3) context.drawImage(this.foodImg3.image, this.x, this.y);
+    else if (this.food === 4) context.drawImage(this.foodImg4.image, this.x, this.y);
+    else if (this.food === 5) context.drawImage(this.foodImg5.image, this.x, this.y);
+    if (this.isSuper) context.drawImage(this.superFoodImg.image, this.superX, this.superY);
+  }
+
   randomCoords() {
     this.food = Food.getRandomFood(1, 5);
     this.x = Food.getRandomFood(0, this.config.cols - 1) * this.config.blockSize;
