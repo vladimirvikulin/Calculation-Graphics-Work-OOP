@@ -54,6 +54,17 @@ export default class Snake {
     }
   }
 
+  changePosition() {
+    this.x += this.speedX * this.config.blockSize;
+    this.y += this.speedY * this.config.blockSize;
+    for (let i = this.snake.length - 1; i > 0; i--) {
+      this.snake[i] = this.snake[i - 1];
+    }
+    if (this.snake.length) {
+      this.snake[0] = { x: this.x, y: this.y };
+    }
+  }
+
   changeDirection() {
     document.addEventListener('keydown',  (e) => {
       if (e.code === 'KeyW' && this.speedY !== 1) {
