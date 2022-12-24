@@ -47,6 +47,23 @@ export default class Snake {
     this.snake = [];
   }
 
+  collision(canvas, commonFood, superFood, score) {
+    if (this.x < 0 || this.x >= canvas.element.width || this.y < 0 || this.y >= canvas.element.height) {
+      this.deleteSnake();
+      setTimeout(() => {
+        this.setStartSettings(commonFood, superFood, score);
+      }, 3000);
+    }
+    for (let i = 1; i < this.snake.length; i++) {
+      if (this.x === this.snake[i].x && this.y === this.snake[i].y) {
+        this.deleteSnake();
+        setTimeout(() => {
+          this.setStartSettings(commonFood, superFood, score);
+        }, 3000);
+      }
+    }
+  }
+
   checkFood(commonFood, superFood, score) {
     if (this.x === commonFood.x && this.y === commonFood.y) {
       this.snake.push({ x: commonFood.x, y: commonFood.y });
