@@ -17,4 +17,15 @@ export default class Snake {
     this.bodyHorImg = new Image('img/snakeBodyHorizontal.png');
     this.bodyVerImg = new Image('img/snakeBodyVertical.png');
   }
+
+  pressToStart(canvas, context) {
+    if (this.speedX === 0 && this.speedY === 0 && !this.isDead) {
+      const text = 'Press WASD to start';
+      context.font = `bold 30px ${'Courier New'}`;
+      context.fillStyle = '#ff0000';
+      context.fillText(text,
+        (canvas.element.width - context.measureText(text).width) / 2,
+        canvas.element.height / 2);
+    }
+  }
 }
