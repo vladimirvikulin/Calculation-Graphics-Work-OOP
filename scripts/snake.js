@@ -19,6 +19,17 @@ export default class Snake {
     this.changeDirection();
   }
 
+  gameOver(canvas, context) {
+    if (this.isDead) {
+      const text = 'Game Over';
+      context.font = `bold 40px ${'Courier New'}`;
+      context.fillStyle = '#ff0000';
+      context.fillText(text,
+        (canvas.element.width - context.measureText(text).width) / 2,
+        canvas.element.height / 2);
+    }
+  }
+
   pressToStart(canvas, context) {
     if (this.speedX === 0 && this.speedY === 0 && !this.isDead) {
       const text = 'Press WASD to start';
