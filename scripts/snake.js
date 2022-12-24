@@ -19,6 +19,20 @@ export default class Snake {
     this.changeDirection();
   }
 
+  draw(canvas, context) {
+    this.gameOver(canvas, context);
+    this.pressToStart(canvas, context);
+    for (const element of this.snake) {
+      if (element === this.snake[0]) {
+        if (this.speedY === -1) context.drawImage(this.headUpImg.image, element.x, element.y);
+        else if (this.speedY === 1)  context.drawImage(this.headDownImg.image, element.x, element.y);
+        else if (this.speedX === -1)  context.drawImage(this.headLeftImg.image, element.x, element.y);
+        else if (this.speedX === 1)  context.drawImage(this.headRightImg.image, element.x, element.y);
+      } else if (this.speedY) context.drawImage(this.bodyVerImg.image, element.x, element.y);
+      else if (this.speedX) context.drawImage(this.bodyHorImg.image, element.x, element.y);
+    }
+  }
+
   gameOver(canvas, context) {
     if (this.isDead) {
       const text = 'Game Over';
