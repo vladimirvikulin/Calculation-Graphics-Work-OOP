@@ -5,7 +5,4 @@ export default class Config {
     this.gameSpeed = 100;
     this.blockSize = 32;
   }
-  increaseSpeed() {
-    if (this.gameSpeed > 50) this.gameSpeed -= 5;
-  }
 }
