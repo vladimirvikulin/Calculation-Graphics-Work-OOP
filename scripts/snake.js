@@ -28,4 +28,12 @@ export default class Snake {
         canvas.element.height / 2);
     }
   }
+
+  setStartSettings(commonFood, superFood, score) {
+    this.isDead = false;
+    this.snake = [{ x: this.x, y: this.y }];
+    score.resetScore();
+    commonFood.randomCoords();
+    superFood.randomSuperCoords();
+  }
 }
