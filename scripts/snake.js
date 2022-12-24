@@ -38,6 +38,15 @@ export default class Snake {
     superFood.randomSuperCoords();
   }
 
+  deleteSnake() {
+    this.isDead = true;
+    this.x = 7 * this.config.blockSize;
+    this.y = 9 * this.config.blockSize;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.snake = [];
+  }
+
   checkFood(commonFood, superFood, score) {
     if (this.x === commonFood.x && this.y === commonFood.y) {
       this.snake.push({ x: commonFood.x, y: commonFood.y });
