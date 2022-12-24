@@ -16,6 +16,7 @@ export default class Snake {
     this.headRightImg = new Image('img/snakeRight.png');
     this.bodyHorImg = new Image('img/snakeBodyHorizontal.png');
     this.bodyVerImg = new Image('img/snakeBodyVertical.png');
+    this.changeDirection();
   }
 
   pressToStart(canvas, context) {
@@ -51,5 +52,23 @@ export default class Snake {
       superFood.y = -1;
       superFood.isSuper = false;
     }
+  }
+
+  changeDirection() {
+    document.addEventListener('keydown',  (e) => {
+      if (e.code === 'KeyW' && this.speedY !== 1) {
+        this.speedY = -1;
+        this.speedX = 0;
+      } else if (e.code === 'KeyA' && this.speedX !== 1) {
+        this.speedX = -1;
+        this.speedY = 0;
+      } else if (e.code === 'KeyS' && this.speedY !== -1) {
+        this.speedY = 1;
+        this.speedX = 0;
+      } else if (e.code === 'KeyD' && this.speedX !== -1) {
+        this.speedX = 1;
+        this.speedY = 0;
+      }
+    });
   }
 }
