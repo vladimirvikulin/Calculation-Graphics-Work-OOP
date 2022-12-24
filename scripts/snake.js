@@ -19,6 +19,12 @@ export default class Snake {
     this.changeDirection();
   }
 
+  update(commonFood, superFood, score, canvas) {
+    this.changePosition();
+    this.collision(canvas, commonFood, superFood, score);
+    this.checkFood(commonFood, superFood, score);
+  }
+
   draw(canvas, context) {
     this.gameOver(canvas, context);
     this.pressToStart(canvas, context);
