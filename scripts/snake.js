@@ -36,4 +36,20 @@ export default class Snake {
     commonFood.randomCoords();
     superFood.randomSuperCoords();
   }
+
+  checkFood(commonFood, superFood, score) {
+    if (this.x === commonFood.x && this.y === commonFood.y) {
+      this.snake.push({ x: commonFood.x, y: commonFood.y });
+      score.increaseScore();
+      commonFood.randomCoords();
+    } else if (this.x === superFood.x && this.y === superFood.y) {
+      for (let i = 0; i < 3; i++) {
+        this.snake.push({ x: superFood.x + i * this.config.blockSize, y: superFood.y * this.config.blockSize });
+      }
+      for (let i = 0; i < 5; i++) score.increaseScore();
+      superFood.x = -1;
+      superFood.y = -1;
+      superFood.isSuper = false;
+    }
+  }
 }
